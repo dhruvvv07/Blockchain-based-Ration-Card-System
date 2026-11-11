@@ -135,7 +135,7 @@ Blockchain-based-Ration-Card-System/
 └── README.md                   # Project documentation
 ```
 
-## 📝 Author & Institution
+## 📝 Author
 
 **Author:** Dhruv Gupta  
 **Mail:** dhruvgupta3035@gmail.com  
