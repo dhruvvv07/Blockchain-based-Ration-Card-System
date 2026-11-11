@@ -1,0 +1,368 @@
+@font-face {
+  font-family: 'CG Omega';
+  src: url('./assets/cg-omega.ttf') format('truetype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Arial:wght@400;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Institutional Header Banner */
+.header-banner {
+  background-color: #008080;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 2px solid #5fa66d;
+}
+
+.header-titles {
+  text-align: center;
+  color: #0d5c22;
+}
+
+.header-titles h1 {
+  font-family: 'CG Omega', sans-serif;
+  font-size: 38px;
+  margin: 0;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.header-titles h2 {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  margin: 5px 0 0 0;
+  font-weight: normal;
+  color: white;
+}
+
+/* Logo Placeholders */
+.logo-placeholder {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Fix for the Right Logo (Aggressive Zoom) */
+/* Logo Placeholders */
+.logo-placeholder {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Zoom in on the right logo to ignore its transparent padding */
+.logo-placeholder.right .header-logo {
+  transform: scale(2.0); 
+}
+
+/* Connection Bar */
+.connection-bar {
+  background-color: #e2f0e5;
+  padding: 10px 40px;
+  text-align: right;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}
+
+.connect-btn {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Teal Navigation Bar */
+.navbar {
+  background-color: #008080; 
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-btn {
+  background-color: transparent;
+  color: #e0f2f1;
+  border: none;
+  padding: 12px 25px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #006666;
+  color: white;
+}
+
+.nav-btn.active {
+  background-color: #004d4d;
+  color: white;
+  border-bottom: 4px solid #8cd69b;
+}
+
+/* Main Content Area */
+.main-content {
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Portal Panels */
+.portal-panel {
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  border: 2px solid #008080;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.panel-header {
+  background-color: #008080;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.panel-header.light {
+  background-color: #5bc0be; 
+}
+
+.panel-search-bar {
+  background-color: #008080;
+  padding: 15px;
+  border-top: 1px solid #006666;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+
+.search-form input {
+  padding: 5px 10px;
+  width: 350px;
+  border: 1px solid #ccc;
+}
+
+.search-btn {
+  background-color: #4da6ff; 
+  color: white;
+  border: 1px solid #0059b3;
+  padding: 5px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+/* Details Table Results & Responsive Wrapper */
+.details-results {
+  width: 100%;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px; /* Prevents 8 columns from squishing */
+}
+
+.details-table td, .details-table th {
+  border: 1px solid white;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.details-table .label {
+  background-color: #7acfa6; 
+  font-weight: bold;
+  color: #0d5c22;
+  width: 12.5%; /* 100% / 8 columns */
+}
+
+.details-table .value {
+  background-color: #c4ebd1; 
+  width: 12.5%;
+}
+
+/* Highlight specifically for the Smart Contract Data */
+.details-table .blockchain-data {
+  background-color: #8cd69b; 
+  color: #004d4d;
+  border: 2px solid #008080;
+}
+
+.details-table .blockchain-data-val {
+  background-color: #e2f0e5;
+  font-weight: bold;
+  color: #004d4d;
+  font-size: 15px;
+  border: 2px solid #008080;
+}
+
+/* Form Styles for Admin and Citizen Tabs */
+.panel-body {
+  padding: 30px;
+  background-color: #f2f9f9;
+}
+
+.landing-page {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.portal-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #006666;
+}
+
+.form-row input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.action-btn {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.action-btn:hover {
+  background-color: #006666;
+}
+
+/* PDF Download Section and Printable Card Framing */
+.details-results-container {
+  padding: 20px;
+  background-color: #f4f7f6;
+}
+
+.download-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.download-btn {
+  background-color: #0d5c22;
+  padding: 8px 20px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.download-btn:hover {
+  background-color: #094017;
+}
+
+.printable-card {
+  background-color: white;
+  border: 2px solid #008080;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
+}
+
+.pdf-card-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #008080;
+}
+
+.pdf-card-header h2 {
+  color: #008080;
+  margin: 0 0 5px 0;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+}
+
+.pdf-card-header p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
