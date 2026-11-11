@@ -138,8 +138,8 @@ Blockchain-based-Ration-Card-System/
 ## 📝 Author & Institution
 
 **Author:** Dhruv Gupta  
-**Mail:** dhruvgupta3035@gmail.com 
-**LinkedIn:** [Dhruv Gupta | LinkedIn] (https://www.linkedin.com/in/dhruvgupta007/)  
+**Mail:** dhruvgupta3035@gmail.com  
+**LinkedIn:** [Dhruv Gupta | LinkedIn](https://www.linkedin.com/in/dhruvgupta007/)  
 **GitHub:** [dhruvvv07](https://github.com/dhruvvv07)
 
 ---
