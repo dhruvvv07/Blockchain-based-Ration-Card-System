@@ -1,30 +1,147 @@
 # 🌾 Blockchain Ration Card System
 
-A decentralized application (dApp) designed to modernize and secure the traditional Public Distribution System (PDS). By leveraging Web3 technologies, this project shifts the management of ration quotas and citizen registrations from centralized, opaque databases to a transparent, immutable blockchain ledger.
+A decentralized application (dApp) designed to modernize and secure the traditional **Public Distribution System (PDS)**. By leveraging Web3 technologies, this project shifts the management of ration quotas and citizen registrations from centralized, opaque databases to a transparent and immutable blockchain ledger.
 
 ## 🚀 Key Features
 
-* **Role-Based Access Control:** Strict admin privileges ensure that only authorized personnel can register new citizens, preventing fraudulent or ghost entries.
-* **Immutable Quota Assignment:** Monthly allowances (e.g., 30 kg) are fixed at the time of registration and enforced algorithmically by the smart contract.
-* **Transparent Verification:** Instantly verifies wallet connections and flags unauthorized interactions using a responsive React frontend.
-* **Local Testnet Ready:** Pre-configured for rapid development and testing using Hardhat and MetaMask.
+- **Role-Based Access Control:** Strict admin privileges ensure that only authorized personnel can register new citizens, helping prevent fraudulent or ghost entries.
+- **Immutable Quota Assignment:** Monthly allowances (e.g., 30 kg) are assigned during registration and enforced algorithmically through smart contracts.
+- **Transparent Verification:** The application verifies wallet connections and flags unauthorized interactions through a responsive React frontend.
+- **Local Testnet Ready:** Pre-configured for rapid development and testing using Hardhat and MetaMask.
 
 ## 🛠️ Tech Stack
 
-* **Smart Contracts:** Solidity, Hardhat, Hardhat Ignition
-* **Frontend:** React.js, Vite, HTML/CSS
-* **Web3 Integration:** Ethers.js
-* **Wallet Provider:** MetaMask
+| Component | Technologies |
+|---|---|
+| Smart Contracts | Solidity, Hardhat, Hardhat Ignition |
+| Frontend | React.js, Vite, HTML, CSS |
+| Web3 Integration | Ethers.js |
+| Wallet Provider | MetaMask |
 
 ## 📋 Prerequisites
 
 Before running this project, ensure you have the following installed:
-* [Node.js](https://nodejs.org/) (v18 or higher recommended)
-* [MetaMask Extension](https://metamask.io/) installed in your browser
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [MetaMask Extension](https://metamask.io/) installed in your browser
+- [Git](https://git-scm.com/) for cloning the repository
 
 ## ⚙️ Installation & Setup
 
-**1. Clone the repository**
+### 1. Clone the Repository
+
 ```bash
-git clone [https://github.com/dhruvvv07/Blockchain-based-Ration-Card-System.git](https://github.com/dhruvvv07/Blockchain-based-Ration-Card-System.git)
+git clone https://github.com/dhruvvv07/Blockchain-based-Ration-Card-System.git
 cd Blockchain-based-Ration-Card-System
+```
+
+### 2. Install Dependencies
+
+Install the backend (Hardhat) dependencies:
+
+```bash
+npm install
+```
+
+Navigate to the frontend directory and install its dependencies:
+
+```bash
+cd frontend
+npm install
+```
+
+### 3. Start the Local Blockchain
+
+Open a new terminal in the project root directory and start the Hardhat local blockchain node:
+
+```bash
+npx hardhat node
+```
+
+Keep this terminal running. Hardhat will provide 20 test accounts, each loaded with 10,000 test ETH.
+
+### 4. Deploy the Smart Contract
+
+Open a second terminal in the project root directory and deploy the smart contract to the local Hardhat network:
+
+```bash
+npx hardhat ignition deploy ignition/modules/RationSystem.ts --network localhost
+```
+
+### 5. Start the Frontend Application
+
+Open another terminal, navigate to the frontend directory, and start the Vite development server:
+
+```bash
+cd frontend
+npm run dev
+```
+
+Once the server starts, open the following URL in your browser:
+
+**http://localhost:5173**
+
+## 🦊 MetaMask Configuration for Localhost
+
+To interact with the dApp, configure MetaMask to connect to your local Hardhat blockchain network.
+
+### Add a Custom Network
+
+1. Open MetaMask.
+2. Navigate to **Settings → Networks → Add a network → Add a network manually**.
+3. Enter the following network details:
+
+| Field | Value |
+|---|---|
+| Network Name | Hardhat Localhost |
+| New RPC URL | `http://127.0.0.1:8545` |
+| Chain ID | `31337` |
+| Currency Symbol | ETH |
+
+4. Click **Save** and switch to the newly added network.
+
+### Import a Test Account
+
+1. Locate the test accounts displayed in the terminal running `npx hardhat node`.
+2. Copy the private key of one of the provided test accounts.
+3. In MetaMask, select **Import Account**.
+4. Paste the private key and complete the import.
+5. Ensure that MetaMask is connected to the **Hardhat Localhost** network.
+
+The imported account will have test ETH available for interacting with the smart contracts and paying transaction gas fees.
+
+> **⚠️ Important:** Only use the private keys generated by your local Hardhat test node. Never use real wallet private keys or these test accounts on a public blockchain network.
+
+## 📂 Project Structure
+
+```text
+Blockchain-based-Ration-Card-System/
+│
+├── contracts/                  # Solidity smart contracts (RationSystem.sol)
+├── frontend/                   # React + Vite frontend application
+│   ├── public/                 # Static assets (icons, etc.)
+│   ├── src/                    # React source code, components, and CSS
+│   ├── index.html              # Main HTML entry point
+│   ├── package.json            # Frontend dependencies
+│   └── vite.config.js          # Vite bundler configuration
+├── ignition/                   
+│   ├── deployments/            # Generated contract deployment artifacts and addresses
+│   └── modules/                # Hardhat Ignition deployment scripts (RationSystem.ts)
+├── scripts/                    # Hardhat scripts (e.g., send-op-tx.ts)
+├── test/                       # Smart contract tests 
+├── hardhat.config.ts           # Core Hardhat configuration file
+├── package.json                # Backend/Hardhat dependencies and scripts
+├── tsconfig.json               # TypeScript configuration
+└── README.md                   # Project documentation
+```
+
+## 📝 Author & Institution
+
+**Author:** Dhruv Gupta  
+**Mail:** dhruvgupta3035@gmail.com 
+**LinkedIn:** [Dhruv Gupta | LinkedIn] (https://www.linkedin.com/in/dhruvgupta007/)  
+**GitHub:** [dhruvvv07](https://github.com/dhruvvv07)
+
+---
+
+⭐ **If you find this project interesting, consider starring the repository!**
